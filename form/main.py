@@ -7,7 +7,7 @@ form="""
     <br>
     <label>Month
 	 	<input type="text" name="month" >
-	</label>  
+	</label>
 
     <label>Day
 	 	<input type="text" name="day">
@@ -24,6 +24,10 @@ form="""
 class MainPage(webapp2.RequestHandler):
     def get(self):
         self.response.out.write(form)
+
+    def post(self):
+        self.response.out.write("Thanks !")
+
 
 app = webapp2.WSGIApplication([
 	('/',MainPage)
