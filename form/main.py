@@ -1,5 +1,4 @@
 # build-a-blog pushed to remote response
-
 #FEb20 ,2017 2:42 pm
 import webapp2
 import cgi
@@ -55,13 +54,17 @@ class MainPage(webapp2.RequestHandler):
             outmessage="That is not a valid birthday !"
             self.write_form(outmessage,user_month,user_day,user_year)
         else:
-            outhead =" <h2 style='background-color:rgb(200,134,125)'> Thanks for entering good data !</h2>"
-            self.response.write(outhead + outform)
+            self.redirect('/thanks')
+            # outhead =" <h2 style='background-color:rgb(200,134,125)'> Thanks for entering good data !</h2>"
+            # self.response.write(outhead + outform)
+class ThanksHandler(webapp2.RequestHandler):
+    def get(self):
+        outhead =" <h2 style='background-color:rgb(200,134,125)'> Thanks for your valid data !</h2>"
+        self.response.out.write(outhead + outform)
 app = webapp2.WSGIApplication([
-	('/',MainPage)
+	('/',MainPage),
+    ('/thanks',ThanksHandler)
 	], debug=True)
-
-
 
 #======+++++======Feb 20,2017 3:07 pm
 	# import webapp2

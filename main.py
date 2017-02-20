@@ -3,21 +3,22 @@
 #ONLY ON GIT
 
 import webapp2
-form="""
-<form method="post">
-	What is your birthday?
-	<br>
-	<label>Month <input type="text" name="month" ></label> <br><br>
-	<label>Day <input type="text" name="day"></label><br><br>
-    <label>Year <input type="text" name="year"></label><br><br>
-  	<br>
-	<br>
-    <input type="submit">
-</form>
-"""
+			# form="""
+			# <form method="post">
+			# 	What is your birthday?
+			# 	<br>
+			# 	<label>Month <input type="text" name="month" ></label> <br><br>
+			# 	<label>Day <input type="text" name="day"></label><br><br>
+			#     <label>Year <input type="text" name="year"></label><br><br>
+			#   	<br>
+			# 	<br>
+			#     <input type="submit">
+			# </form>
+			# """
 class MainPage(webapp2.RequestHandler):
 	def get(self):
-        self.response.out.write(form)
+    #    self.response.out.write(form)
+	self.response.write("Form")
 
     def post(self):
         self.response.out.write("Thanks for a valid day !")
